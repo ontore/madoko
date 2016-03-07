@@ -1,0 +1,310 @@
+<!--% !TEX encoding = UTF-8 Unicode-->
+
+<!-- LaTeX conversion
+  Drag&Drop further .tex/.bib/.cls/.sty/.bst or image files in the editor window
+  Conversion reference at: http://research.microsoft.com/en-us/um/people/daan/madoko/doc/reference.html#texconv
+-->
+Doc Class   : [a4paper]llncs
+Package     : csquotes
+Package     : ae,aecompl,aeguill,datetime,xspace,amsmath,times,graphicx,color,rotating
+Package     : [smaller]acronym
+Package     : [usenames,dvipsnames]pstricks
+Package     : epsfig
+Package     : [verbose]placeins
+Package     : [section]extraplaceins
+Title       : \headline&br;_\normalsize{\SubTitleString}_\/
+Bib Style   : splncs03
+Bibliography: hoffmann
+Author      : \AuthorString\institute{\InstituteString,&br;\EmailString}
+Heading Base: 2
+Logo        : True
+TeX Header  :
+    % Latex definitions. If you get errors in math- or PDF generation:
+    % * Move commands that are not used in math under 'Tex Header*' metadata
+    % * Move commands specific to math in a '~ MathDefs' block
+    
+    \pagestyle{empty}
+    \def\CSTshort{CST\xspace}
+    \def\CSTfull{Creativity Support Tools\xspace}
+    \def\AIshort{AI\xspace}
+    \def\AIfull{Artificial Intelligence\xspace}
+    \def\ai{\ac{AI}\index{\AIfull!(\AIshort)}\xspace}
+    \def\CRshort{CR\xspace}
+    \def\CRfull{Creativity Research\xspace}
+    \def\CCshort{CC\xspace}
+    \def\CCfull{Computational Creativity\xspace}
+    \def\cc{\ac{CC}\index{\CCfull!(\CCshort)}\xspace}
+    \def\HCIshort{HCI\xspace}
+    \def\HCIfull{Human-Computer Interaction\xspace}
+    \def\hci{\ac{HCI}\index{\HCIfull!(\HCIshort)}\xspace}
+    \def\topicshort{HC\textsuperscript{3}\xspace}
+    \def\topicfull{Human-Computer Co-Creativity\xspace}
+    \def\headline{On Modeling Human-Computer Co-Creativity}
+    \def\DraftString{}
+    \def\SubTitleString{}
+    \def\KeywordsString{\HCIfull, \AIfull, \CRfull}
+    \def\AuthorString{Oliver Hoffmann}\def\EmailString{oliver@hoffmann.org}
+    \def\InstituteString{Center for Medical Statistics, Informatics, and Intelligent Systems,\\Medical University of Vienna}
+     
+    \def\SubjectString{\headline}
+    \def\PDFTitle{\texorpdfstring{\headline}{\headline}}
+    \def\PDFAuthor{\texorpdfstring\AuthorString\AuthorString}
+    \def\PDFKeywords{\texorpdfstring\KeywordsString\KeywordsString}
+    \def\PDFSubject{\texorpdfstring\SubjectString\SubjectString}
+     
+    
+     
+     
+     
+    
+     
+     
+     
+     
+    
+    \newcommand{\mycopy}[1]{}
+    \newcommand{\localcopy}[1]{}
+    \newcommand{\authorcopy}[1]{}
+    \newcommand{\publishercopy}[1]{}
+    \newcommand{\webcopy}[1]{}
+    \newcommand{\htmlcopy}[1]{}
+    \newcommand{\localhtmlcopy}[1]{}
+    \newcommand{\homepage}[1]{}
+    \newcommand{\quotephrase}[1]{\blockquote{#1}}
+    \newcommand{\notion}[1]{\emph{#1}\index{#1}}
+    \newcommand{\notio}[1]{\emph{#1}}
+    \newcommand{\ct}[1]{\noindent\centerline{\mbox{#1}}}
+    
+    %\ makeindex
+
+
+
+[TITLE]
+
+
+~ Begin Abstract 
+Do we have a scientific model of creativity as emerging from contributions of computer users, computer systems and their interaction? Such a model would require describing the creative process in general, conditions for human creativity, the added value of human-computer cooperation as well as the role and power of computing. All of these topics have been the subject of research, but they have been addressed in different research communities. Potential obstacles for combining research results from research fields such as knowledge engineering and creativity research and properties of a general model of \topicfull are discussed.
+
+~ End Abstract
+\CSTfull (\CSTshort) are a relatively recent topic in \HCIfull (\HCIshort) [@Shneiderman2006Creativity].
+But the goal of extending not just the limits of human productivity but also creativity has occupied a prominent place in the earlier history of computing. Computer-supported creativity had to be rediscovered after decades of scientific neglect. Is creativity a particularly hard challenge for computer science? On the one hand, creativity is a difficult topic in itself. On the other hand, we have developed a number of powerful computer technologies with the explicit goal of augmenting the human intellect, but we do not know whether these technologies have increased creativity.  More than once, computer science has abandoned the topic of creativity as soon as a path towards extending computing power in itself was identified.
+
+# Augmenting Human Creativity {  - }
+
+
+As early as 1945, aiding human creativity with computing machinery was proposed: \quotephrase{...creative thought and essentially repetitive thought are very different things. For the latter there are, and may be, powerful mechanical aids.} [@AsWeMayThink-Bush-1945]
+Computers were expected to increase human creativity by alleviating the routine elements of scientific work. Did we reach this goal? With data-intensive science, we now have a research paradigm that relies completely on computational support [@TheFourthParadigm:Data-IntensiveScientificDiscovery:HeyTansleyTolle:2009]. But has research become more creative as a result? When Chaomei Chen developed CiteSpace and assessed scientific creativity, he still had to \quotephrase{identify principles that appear to be necessary for creative thinking from a diverse range of sources} [@TurningPoints:TheNatureOfCreativity:ChaomeiChen:2012]. Seven decades after Vannemar Bush, scientific creativity and its relationship to computer support are still poorly understood.
+
+In 1960, J.C.R. Licklider extended the vision of supporting creative thought beyond the domain of scientic work as a generalized goal for achieving \notion{man-computer symbiosis}: 
+"The hope is that, in not too many years, human brains and computing machines will be coupled together very tightly, and that the resulting partnership will think as no human brain has ever thought and process data in a way not approached by the information-handling machines we know today."  [@Man-ComputerSymbiosis-Licklider-1960]
+When Doug Engelbart followed up on the research into \notion{augmenting human intellect}, he already emphasized the central role of \notion{knowledge}:
+"The capabilities of prime interest are those associated with manipulating symbols and concepts in support of organizing and executing processes from which are ultimately derived human comprehension and problem solutions." [@AugmentingHumanIntellect-AConceptualFramework-Engelbart-1962].
+
+This line of research was exceptionally successful: With the comparatively recent exception of touch devices, the combination of keyboard, graphical monitor, computer mouse and hypertext have been the standard computer interface over the last three decades. One might argue that our intellect was indeed augmented and our creativity supported by these technologies. If that is the case, we should in fact call them \CSTfull. Why don't we? Because even though creativity support has been a recurrent research goal, a scientific method for identifying successful \topicfull (\topicshort) was never developed. A recent systematic review of design theories for creativity support tools for instance states: 
+
+
+
+~ Begin Quote 
+Much work
+on creativity support systems provides design guidelines that inform
+about what set of features the class of information system should
+encompass in order to be successful \[...\] literature does not yet
+provide a wide range of design research efforts that test the
+effects of particular creativity support system design features.  [@TowardsAUnifiedDesignTheoryForCreativitySupportSystems:VoigtNiehavesBecker:2012]
+
+~ End Quote
+We can evaluate computer system properties, but we do not have a reliable method for identifying a process of creative human-computer co-operation.
+
+# Research Fields Fragmentation {  - }
+
+
+
+~ Begin Figure { #fig-research-fields ; caption:"research topics for \topicfull " }
+~ Begin Center
+![hc3-fields]
+
+[hc3-fields]: hc3-fields.eps "image title" { transform:"scale(0.5)" }
+
+~ End Center
+~ End Figure
+
+
+\topicfull is a process resulting in a creative outcome and involving one or more human individual(s) and one or more computer system(s). A model of \topicshort would therefore have to account for the role of each of these three elements as well as the relationships between them (Figure  [#fig-research-fields]). \HCIshort has recently rediscovered \CSTfull. But as a computing discipline, \HCIshort is (again) focusing its efforts on the properties of the computer \notion{tool}, rather than the creative process.  \CCfull (\CCshort) is investigating the entire creative process, but aims for developing creative computer systems as opposed to supporting human creativity. Human creativity itself  is typically investigated independent of any computer interaction  in \CRfull (\CRshort).
+
+\topicshort research is fractured. While there are several research communities working on some of the relevant topics, there is no research community dedicated to understanding all of them in conjunction.  The obvious task would then be combining research results from these communities. But trans-disciplinary research is facing fundamental differences in research culture.
+\CRshort has grown out of psychology and its methods. \HCIshort and \CCshort are sub-disciplines of computer science. As engineering disciplines, the latter two are primarily concerned with working towards clearly defined outcomes, while the former places more emphasis on understanding a pre-existing phenomenon. When research is synthesized across these disciplines, key notions and their meaning have to be accommodated.
+
+# Knowledge in Computer Science {  - }
+
+
+\CCshort has its roots in \AIfull (\AIshort). As in all \AIshort-related disciplines, \notion{knowledge} plays a key role in \CCshort. In every day language, knowledge is understood as something an individual has or does not have. Whether or how this knowledge is or can be represented or transmitted through the use of symbolic representations is secondary. This is also the way \notion{knowledge} is viewed in \CCshort.
+
+Computers do not develop and learn like human individuals, they are constructed by computer engineers. To give computers knowledge, \AIshort researchers have invented various types of \notion{knowledge representation}, leading to extended discussions on what constitutes the best type of knowledge representation.
+
+
+~ Begin Figure { #fig-levels ; caption:"computer levels according to Newell" }
+~ Begin Center
+![levels]
+
+[levels]: levels.eps "image title" { transform:"scale(0.5)" }
+
+~ End Center
+~ End Figure
+
+
+Alan Newell has tried to settle this controversy within \AIshort and his proposal is very illustrative of the content and method of \AIshort research. He formulated a hypothesis claiming knowledge would reside in a virtual computer system level called the \notion{knowledge level}. According to Newell [@TheKnowledgeLevel-Newell-1982] the levels in (Figure  [#fig-levels]) all share the following properties: Higher levels do not have to know about the specific implementation of lower levels. Each level can be reduced to the level below. And each level has its unique medium.
+
+According to Newell's hypothesis, knowledge is a medium of computation just like electrons or software symbols and it consists of goals, actions and bodies, governed by the principle of rationality. By delegating knowledge to a new computer system level, Newell removed the need for deciding on the best form of knowledge representation: Any representation can implement knowledge in its own way.
+
+But there is no knowledge without symbols, a view consistent with the earlier \notion{physical symbol systems} hypothesis [@ComputerScienceAsEmpiricalInquiry:SymbolsAndSearch-Newell-Simon-1976]. A discussion of competing views such as \notion{subsymbolic \AIshort} would be beyond the scope of this article, but as Newell correctly points out, his levels metaphor follows the practice of \AIshort and computer science research in general.
+
+The primary goal of computer science is to make computers more powerful and to ensure that computed results are correct at all times. Then how is correctness verified on the knowledge level? The highest directly observable system level contains symbols that might or might not encode some specific knowledge, but knowledge itself would be removed from direct observation.
+Newell proposed a mechanism of indirect verification: If some (human or artificial) \notion{agent} A can detect the impact of some specific knowledge in the actions of another agent B, agent A can verify the presence of such knowledge in agent B.
+
+# Objectivist/Realist World View {  - }
+
+
+
+~ Begin Figure { #fig-3agents ; caption:"how do different observing agents agree on the presence of knowledge?" }
+~ Begin Center
+![3agents]
+
+[3agents]: 3agents.pdf "image title" { width:"100%" }
+
+~ End Center
+~ End Figure
+
+
+The world view underlying the computer science notion of knowledge can be described as \notion{objectivist} or \notion{realist}, which can be detected by discussing those aspects that authors like Newell do not discuss, and the questions that are not answered. A good example is: \quotephrase{Who is the agent that will verify the presence of knowledge in another agent?} More than one agent could take the role of the observing agent A in Newell's knowledge verification mechanism and the different As could come to different conclusions on whether knowledge is present in agent B  (Fig.  [#fig-3agents]).
+
+Newell does not explain how the A agents would be able to come to any consistent conclusion on agent B's knowledge, and since their symbol levels might be mutually incompatible, it is unclear how they could even communicate their different views on agent B. The only conceivable way Newell's knowledge verification might yield consistent results is by relying on a standardized observer agent A that serves as the absolute reference on verifying knowledge. Newell implicitly assumes _objective knowledge_\/ that would be the basis, rather than the result of attempts at creating artificial intelligence.
+
+Such assumptions are quite common in information technology. In fact, Shannon's definition of \notion{information} [@AMathematicalTheoryOfCommunication-Shannon-1948] only works under the assumption of an objective observer for assessing the probability of the next symbol. Shannon actually used an object in the form of the English language dictionary as a means for replacing subjective meaning with an objective type of measurement.
+
+For good reason, the objectivist/realist view has a long tradition in computer science. Computer systems are first of all objects which are required to work correctly and independent of the subjects that created them. The assumption (or implicit goal) of objective knowledge and objective correctness is therefore in general useful for this research field. But this view is in stark contrast to the more \notion{subjectivist} or \notion{constructivist} view in psychology and \CRshort. Realist and constructivist world views each have their role in science and engineering [@ConstructivismCognitionAndScience:AnInvestigationOfItsLinksAndPossibleShortcomings:Peschl:2001], but the constructivist view is a better fit for topics such as learning or creativity. And some key notions from \CRshort can only be fully appreciated within the constructivist view.
+
+# Divergent Thinking in \CRfull {  - }
+
+
+The standard definition of \notion{creativity} in \CRshort is bipartite: Creativity requires both  \notion{novelty} (also called \notion{originality}) and \notion{effectiveness} [@TheStandardDefinitionOfCreativity-Runco-Jaegera-2012]. Effectiveness is quite compatible with the realist/objectivist world view adopted in \CCshort, but novelty poses some challenges. Where does novelty come from?
+
+In human creativity, two different modes of thinking have been observed: \notion{Convergent thinking} and \notion{divergent thinking} [@Creativity-Guilford-1950]. Problem-solving as search [@HumanProblemSolving-Newell-1972] is a typical objectivist approach in \AIshort and a good example of convergent thinking: First all relevant constraints are determined and then possible solutions are checked for their consistency with these constraints. The end result will then be the solution with the least amount of divergence from what was required.
+
+Divergent thinking does the exact opposite: exploring multiple paths of thought seemingly irrelevant and even inconsistent with the task at hand and only later merging some of the paths into a new, potentially surprising, and eventually also consistent result. Divergent thinking temporarily ignores all the criteria of correctness and objectivity that are at the heart of computer engineering. And divergent thinking has been shown to be an integral part of human creativity [@DivergentThinkingAsAnIndicatorOfCreativePotential-Runco-Acara-2012].
+
+Convergent thinking is important for creativity as well. But the normal, convergent mode of thinking is reagarded as a given in \CRshort, and the divergent mode as a special addition required for true creativity. Divergent thinking is seen at the core, divergent thinking at the periphery of creativity. The four P's of creativity [@AnAnalysisOfCreativity:Rhodes:1961;@runco1999encyclopedia] are a widely adopted framework of research consisting of Product, Person Process and Press. The Press portion stands for environmental and social constraints, which of course can only be accommodated with the appropriate amount of convergent thinking.
+
+So the Press aspect of creativity can be seen as mandating a certain amount of realism/objectivism. But external constraints can also be interpreted from a radical constructivist point of view. In his highly influential study, Csikszentmihalyi [@Creativity-FlowAndThePsychologyOfDiscoveryAndInventionCsikszentmihalyi-1997] has for instance argued, that creativity can only be evaluated against its social frame of reference, denying any realist aspect of creativity.
+
+Radical constructivism is of course not suited for describing computer systems, since computer systems are expected to work correctly and autonomously. The kind of radical realism adopted in \AIshort on the other hand is ill suited for understanding human creativity which relies on the subject's ability of creating new and unexpected meaning. This does not imply that computer systems cannot be creative. It does however imply that the world view typically adopted in computing is inherently limited in its ability to describe and understand creativity. Divergent thinking is the one aspect of human creativity highlighting the shortcomings of the standard view of knowledge and meaning in computing: Any symbol, any meaning and the relevance of any information or assumption are up for re-interpretation in the divergent thinking stage of the creative process. \topicshort involves both human actors and computer systems, therefore a scientific model of \topicshort will have to accommodate both world views.
+
+# What a model could look like {  - }
+
+
+In spite of the objectivist/realist notions for describing computer systems, \AIshort researchers have repeatedly argued that their models do not have to conform to the objectivist requirement of falsifiability formulated by Popper [@LogikDerForschung:Popper:1935]. Which assumptions from computing have been validated and should be incorporated in an integrated model?
+
+Newells knowledge level hypothesis was for instance meant to be validated via the success of strong \AIshort. Apart from rather technical implementation details on all the levels below the knowledge level, classical strong \AIshort had only one falsifiable scientific hypothesis: That it would able to build intelligent robots and that it would be able to build them in a certain time frame. This one falsifiable hypothesis has turned out to be false and therefore the knowledge level hypothesis could be considered falsified.
+
+But the research approach described by this hypothesis is still applied today, so his hypothesis should rather be regarded as a description of research culture. Rather than documenting all of their failures, computer engineers tend to modify their computer models until they arrive at a working prototype. Falsification has a very low priority in computing, to the degree that the criterion of falsifiability is argued to be irrelevant for instance in cognitive science  [@TheRoleOfFalsificationInTheDevelopmentOfCognitiveArchitectures:InsightsFromALakatosianAnalysis:Cooper:2007]
+
+While such a form of scientific discovery might be appropriate for the development of purely artificial systems, it certainly cannot be applied to a phenomenon involving human actors. A scientific model of \topicshort has to incorporate falsifiable hypotheses.
+
+
+~ Begin Figure { #fig-roles ; caption:"explicit convergent and divergent thinking roles" }
+~ Begin Center
+![polizei]
+![zauberer]
+
+[zauberer]: zauberer.eps "image title" { width:"40%" }
+
+
+[polizei]: polizei.eps "image title" { width:"40%" }
+
+~ End Center
+~ End Figure
+
+
+As opposed to the typical \CCshort model, a model of \topicshort cannot be a computer model. The human and computer side of such an interaction are different and will have to be described in different ways. The objectivist/realist world view will be more suitable for describing the computer system, the subjectivist/constructivist view more suitable for describing the human partner. Their interaction will have to be described from both the human and computer perspective as well. The model should accommodate all the key notions from relevant research fields and describe compatible computer system properties. It should describe the interactions between humans and computers and the creative process. It should incorporate both an objectivist and a subjectivist understanding of knowledge and should explain the role of knowledge in the creative process.
+
+I propose using an explicit description of human and computer \notion{roles} as the starting point for such an integrated model. Human and computer partners might fulfill such a role in different ways, but in a creative co-operation, each partner should be able to perform identifiable roles at a given stage of the process (Fig.  [#fig-roles]).
+
+
+~ Begin Figure { #fig-human-computer4 ; caption:"human agent in divergent and computer agent in convergent roles" }
+~ Begin Center
+![human-computer4]
+
+[human-computer4]: human-computer4.eps "image title" { width:"100%" }
+
+~ End Center
+~ End Figure
+
+
+We know that humans cannot employ convergent and divergent thinking at the same time. If computers can in fact augment human creativity in the way described above, the computer partner should be able to augment the human partner by performing the matching, opposite role. The scenario described by Vannemar Bush can then be classified as the type of interaction with a human agent in the divergent and a computer agent in the convergent role (Fig.  [#fig-human-computer4]).
+
+If both agents are to operate on a joint representation of the creative task, they will have to share some sort of knowledge representation. If divergent and convergent roles are identifiable, their impact on this knowledge representation should be identifiable as well. I propose the terms \notion{diversion} and \notion{consolidation} for the effect of applying divergent and convergent thinking on knowledge representation. Diversion of knowledge involves selectively disconnecting symbols, meaning and information and re-creating connections irrespective of external and internal constraints. Consolidation of knowledge involves merging previously inconsistent symbols, meaning and information into a new consistency. Concept blending [@CreativityAndArtificialIntelligence:AConceptualBlendingApproach:Pereira:2007] can for instance be seen as a type of knowledge consolidation.
+
+
+~ Begin Figure { #fig-human-computer5 ; caption:"human agent in convergent and computer agent in divergent roles" }
+~ Begin Center
+![human-computer5]
+
+[human-computer5]: human-computer5.eps "image title" { width:"100%" }
+
+~ End Center
+~ End Figure
+
+
+In the general sense, this analysis is based on several hypotheses:
+
+
+
+1. \topicshort exists as a unique phenomenon
+
+* Creativity as resulting from HC3 can be measured in the same way as human creativity
+
+* \topicshort is more than the sum of its parts: The creative co-operation of computer(s) and person(s) yield results that are either more creative or creative in a different way
+
+* The \topicshort process has observable properties and has general properties independent of application domain
+
+* the process of creative co-operation is different from other types of \HCIshort
+
+
+* \topicshort requires both convergent and divergent thinking
+
+* divergent thinking involves the diversion of knowledge
+
+* convergent thinking depends on the previous consolidation of knowledge
+
+* human and computer partners can each perform the role of convergent or convergent agent, but in fundamentally different ways and never at the same time
+
+* Each step in the \topicshort process can be characterized by the flow of control and exchange of knowledge between human and computer partner
+
+By such a deep integration of key research notions across disciplines, system properties such as openness or playfulness [@TowardsAUnifiedDesignTheoryForCreativitySupportSystems:VoigtNiehavesBecker:2012] can be analyzed in a systematic way, for instance as resulting from the availability of knowledge diversion tools. \topicshort is an iterative process, and in each of the process stages, human or computer can perform one of the following functions:
+
+
+
+1. diverge: multiple options are explored with little regard for consistency or correctness
+
+* compare: intermediate results are compared against original requirements
+
+* consolidate: previously inconsistent knowledge is blended into new consistent knowledge
+
+* converge: consistent solutions are generated
+
+Among other things, these hypotheses entail that a scenario opposite to those described in the previous sections should be equally feasible: The computer as divergent agent and the human as convergent partner. One scenario would be the diverging computer partner generating seemingly inconsistent material with the human partner selecting and finally merging some of this material into something new. (Fig.  [#fig-human-computer5]).
+
+If this model is correct, human and computer can be creative in very different ways. The properties for the design of creativity support systems will be different for each of these scenarios, but if these hypotheses are correct, some properties will be relevant for all of them. Neither human nor computer would have to be creative on their own. But if we want to identify \topicfull, then we should be able to identify the stages of such a process as well as the overall creative result.
+
+# Conclusion {  - }
+
+
+\topicfull is an old research goal which has seen renewed interest in the form of \CSTfull in the last years. A general model of \topicshort would have to describe any kind of co-creativity and account for all relevant human and computer contributions as one system. Such a general model of the process of \topicshort is still missing.
+
+Elements for such a model can be found in research fields for different aspects of \topicshort. Therefore a synthesis of research results is an appropriate option for building a model. But the respective research communities are exhibiting fundamental differences in research culture and epistemology, which have to be acknowledged and considered. A unified model should include the key concept of divergent thinking and account for the processing and exchange of knowledge.
+
+Explicit specification of roles played by human or computer partner can serve as a means for integrating these aspects. I am formulating the hypothesis that both human and computer can be the agents for either convergent or divergent thinking in the creative process. Verification or falsification of this model will depend on a mechanism for identifying these roles in an empirical setting.
+
+ 
+
+# References {-}
+[BIB]
