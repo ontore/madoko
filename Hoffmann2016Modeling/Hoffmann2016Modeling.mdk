@@ -14,7 +14,7 @@ Package     : [verbose]placeins
 Package     : [section]extraplaceins
 Title       : \headline&br;_\normalsize{\SubTitleString}_\/
 Bib Style   : splncs03
-Bibliography: hoffmann
+Bibliography: ../ontore.bib
 Author      : \AuthorString\institute{\InstituteString,&br;\EmailString}
 Heading Base: 2
 Logo        : True
